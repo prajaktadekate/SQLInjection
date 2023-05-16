@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from xgboost import XGBClassifier
 
 def init():
-    df = pd.read_csv(r'dataset/sql_30k.csv')  # Read the dataset.
+    df = pd.read_csv(r'SQLInjectionMLProject/dataset/sql_30k.csv')  # Read the dataset.
     df.head(10)
 
     df.drop(["Unnamed: 2", "Unnamed: 3"], axis=1, inplace=True)
@@ -53,7 +53,7 @@ def getPrediction(text):
     tfidf_vectorizer = init()
     v0 = tfidf_vectorizer.transform([text]).toarray()
     # print(v0)
-    Pkl_Filename = r'models/xgb_clf_tfidf.pkl'
+    Pkl_Filename = r'models_bkp/xgb_clf_tfidf.pkl'
 
     # # Load the model from the file
     # with open(Pkl_Filename, 'rb') as file:
